@@ -1,31 +1,44 @@
-import React from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-
-import Me from './Me.js';
-import Report from './Report.js';
+import React, { Component } from 'react';
+import Me from './components/Me/Me.js';
+import Reports from './components/Reports/Report.js';
+import Login from './components/Forms/login.js';
+import Register from './components/Forms/register.js';
+import Logout from './components/Forms/logout.js';
 
 import './App.css';
 
-const App = () => (
-  <Router>
-    <div className="App">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/reports/week/1">Week 1</Link>
-          </li>
-        </ul>
-      </nav>
-      <Route exact path="/" component={Me} />
-      <Route path="/reports/:week/1" component={Report} />
-      <div className="footer">
+class App extends Component {
+
+  render() {
+      const loggedIn = sessionStorage.getItem('jwtToken') != null;
+
+    return (
+      <Router>
+        <div className="App">
+          <nav>
+            <ul>
+              <li key="home"><Link to="/">Home</Link></li>
+              <li key="reports"><Link to="/reports/">Reports</Link></li>
+              <li key="login"><Link to="/login">Login</Link></li>
+              <li key="logout"><Link to="/logout">Logout</Link></li>
+              <li key="register"><Link to="/register">Register</Link></li>
+            </ul>
+          </nav>
+
+          <Route exact path="/" component={Me} />
+          <Route path="/login/" component={Login} />
+          <Route path="/register/" component={Register} />
+          <Route exact path="/reports/week/:kmom" component={Reports} />
+          <Route path="/logout/" component={Logout} />
+          <Route exact path="/reports/" component={Reports} />
+          <div className="footer">
             <p>Copyright &copy; Wissam Sawah</p>
           </div>
-    </div>
-  </Router>
-);
+        </div>
+      </Router>
+    );
+}
+}
 
 export default App;

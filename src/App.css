@@ -12,24 +12,66 @@ html {
     margin: auto;
     padding: 3em 6em 4.5em;
     background-color: #ffffff2b;
-    color: white;
+    color: #fff;
     margin-top: 5em;
 }
 
+
+
+.form-register {
+    text-align: center;
+}
+
+.reports {
+    padding: 1em;
+    line-height: 2.5em;
+     box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
+     background-color: #ffffff21;
+     
+}
+
+.addNav {
+    margin-bottom: 3em;
+    padding: 6px;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
+    background-color: #ffffff21;
+}
+
+.input-submit {
+    height: 3em;
+}
+
+input {
+    height: 2em;
+    width: 40%;
+    text-align: center;
+    margin-top: 1em
+}
+
 h1 {
-    font-size: 5em;
+    font-size: 2em;
     font-weight: 100;
     margin-bottom: 2rem;
 }
 
 h2 {
-    font-size: 1.3em;
+    font-size: 1em;
     font-weight: 200;
 }
 
 h3 {
     font-size: 1em;
     font-weight: 500;
+}
+
+code {
+    font-family: Consolas,"courier new";
+    color: crimson;
+    background-color: #f3eaea54;
+    padding: 2px;
 }
 
 p {
@@ -75,7 +117,8 @@ nav {
     z-index: 2000;
     color: #303030;
     border-bottom: 1px solid white;
-    padding: 0.4em;
+    padding: 1em;
+    background-color: #525151;
 }
 
 .github {
