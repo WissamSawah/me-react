@@ -5,7 +5,7 @@ const Me = () => {
     const [text, setText] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:1337/')
+        fetch('http://me-api.wissamsawah.me/')
         .then(res => res.json())
         .then(res => setText(res.data[0].msg));
     });

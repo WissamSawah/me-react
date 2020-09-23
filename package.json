@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.5.2",
+    "chromedriver": "^85.0.1",
+    "geckodriver": "^1.20.0",
     "react": "^16.9.0",
     "react-bootstrap": "^1.3.0",
     "react-dom": "^16.9.0",
@@ -13,9 +15,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "mocha test/**/*.js",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && rsync -av build/* efo@jsramverk.se:/var/www/me-react.jsramverk.me/html/"
+    "deploy": "npm run build && rsync -av build/* deploy@wissamsawah.me:/var/www/me-react.wissamsawah.me/html/"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -25,5 +27,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-plugin-react": "^7.14.3",
+    "javascript-style-guide": "^1.0.1",
+    "mocha": "^6.2.0",
+    "react-socket-io": "^0.2.5",
+    "selenium-webdriver": "^3.6.0"
+  }
 }

@@ -31,7 +31,7 @@ class Login extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-            const url = "http://localhost:1337/auth/login";
+            const url = "http://me-api.wissamsawah.me/auth/login";
             fetch(url, {
                 method: 'POST',
                 body: JSON.stringify({

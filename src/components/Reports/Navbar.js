@@ -14,7 +14,7 @@ class Navbar extends Component {
     }
 
     getWeeks() {
-        const url = "http://localhost:1337/reports/get-weeknumbers";
+        const url = "http://me-api.wissamsawah.me/reports/get-weeknumbers";
         fetch(url, {
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
