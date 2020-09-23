@@ -8,20 +8,11 @@ node_js:
 
 sudo: false
 
-env:
-  global:
-    - MOZ_HEADLESS=1
-
-addons:
-    firefox: "68.1"
-
-
 git:
     submodules: false
 
 before_script:
     - npm install
-
 
 script:
     - npm test
