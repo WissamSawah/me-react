@@ -34,7 +34,7 @@ class NewReport extends Component {
     handleSubmit(e) {
         e.preventDefault();
         console.log(this.state.fields);
-            const url = "http://me-api.wissamsawah.me/reports/add-reports";
+            const url = "https://me-api.wissamsawah.me/reports/add-reports";
             fetch(url, {
                 method: 'POST',
                 body: JSON.stringify({

@@ -145,7 +145,7 @@ class Register extends Component {
         } else if (this.state.errors["nameError"]) {
             alert('Please enter a valid name');
         } else {
-            const url = "http://me-api.wissamsawah.me/auth/register";
+            const url = "https://me-api.wissamsawah.me/auth/register";
             fetch(url, {
                 method: 'POST',
                 body: JSON.stringify({

@@ -5,6 +5,7 @@ import Reports from './components/Reports/Report.js';
 import Login from './components/Forms/login.js';
 import Register from './components/Forms/register.js';
 import Logout from './components/Forms/logout.js';
+import Chat from "./components/Chat/Chat.js";
 
 import './App.css';
 
@@ -23,6 +24,7 @@ class App extends Component {
               <li key="login"><Link to="/login">Login</Link></li>
               <li key="logout"><Link to="/logout">Logout</Link></li>
               <li key="register"><Link to="/register">Register</Link></li>
+              <li key="chat"><Link to="/chat">Chat</Link></li>
             </ul>
           </nav>
 
@@ -32,6 +34,7 @@ class App extends Component {
           <Route exact path="/reports/week/:kmom" component={Reports} />
           <Route path="/logout/" component={Logout} />
           <Route exact path="/reports/" component={Reports} />
+          <Route path="/chat" component={Chat} />
           <div className="footer">
             <p>Copyright &copy; Wissam Sawah</p>
           </div>

@@ -12,7 +12,7 @@ class ShowReport extends Component {
 
     getReports() {
         let number = this.props.match.params.number;
-        const url = `http://me-api.wissamsawah.me/reports/week/${number}`;
+        const url = `https://me-api.wissamsawah.me/reports/week/${number}`;
 
         fetch(url, {
             method: 'GET',
