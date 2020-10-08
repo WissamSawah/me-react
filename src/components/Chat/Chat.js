@@ -18,6 +18,10 @@ class Chat extends Component {
             addMessage(data);
             });
 
+        this.socket.on('chatHistory', function(history) {
+            restoreHistory(history);
+        });
+
         this.sendMessage = e => {
             e.preventDefault();
             const userMessage = this.state.message;
@@ -30,6 +34,13 @@ class Chat extends Component {
                     });
                 this.setState({message: ''});
             }
+        };
+
+
+        this.getHistory = e => {
+            console.log("inside getHistory");
+            e.preventDefault();
+            this.socket.emit('getHistory', {});
         };
 
         this.setUsername = e => {
@@ -46,6 +57,14 @@ class Chat extends Component {
 
            this.setState({messages: allMessages}, this.scrollToBottom);
        };
+
+       const restoreHistory = history => {
+           var allMessages = history.map(function(msg) {
+               return {timestamp: msg.timeMsg, user: msg.user, message: msg.message};
+           });
+
+           this.setState({messages: allMessages}, this.scrollToBottom);
+       };
    }
 
     scrollToBottom() {
@@ -58,6 +77,7 @@ class Chat extends Component {
         return (
             <div className="Form1">
                 <h1>Messages:</h1>
+                <button onClick={this.getHistory} className="historyButton">Older messages</button>
                 <div id="allMessages" className="allMessages">
                 {this.state.messages.map((message, key) => {
                     return (
@@ -81,7 +101,7 @@ class Chat extends Component {
                 <textarea id="newMessage" className="newMessage" required
                     value={this.state.message}
                     onChange={e => this.setState({message: e.target.value})} />
-                <button onClick={this.sendMessage} className="button">Send</button>
+                <button onClick={this.sendMessage} className="buttonSend">Send</button>
             </div>
         );
     }

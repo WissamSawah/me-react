@@ -36,6 +36,7 @@
     "mocha": "^6.2.0",
     "react-socket-io": "^0.2.5",
     "selenium-webdriver": "^3.6.0",
-    "regenerator-runtime": "^0.13.7"
+    "regenerator-runtime": "^0.13.7",
+    "prop-types": "^15.7.2"
   }
 }
